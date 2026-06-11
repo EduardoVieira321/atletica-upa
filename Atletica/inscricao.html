@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Inscreva-se em uma modalidade da AAAUPA — Associação Atlética Acadêmica UNIFEI Pouso Alegre." />
+  <title>Inscrição — AAAUPA</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦜</text></svg>" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<nav class="navbar">
+  <div class="container">
+    <a href="index.html" class="nav-logo">
+      <img src="img/logo.png" alt="Logo AAAUPA" class="logo-icon" style="width:42px;height:42px;object-fit:contain;" />
+      <span class="brand-name">AAA<span class="brand-accent">UPA</span></span>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="modalidades.html">Modalidades</a></li>
+      <li><a href="campeonatos.html">Campeonatos</a></li>
+      <li><a href="eventos.html">Nossos Eventos</a></li>
+      <li><a href="quem-somos.html">Quem Somos</a></li>
+      <li><a href="contato.html">Contato</a></li>
+      <li><a href="inscricao.html" class="btn-nav-cta active">Inscreva-se</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<header class="page-header">
+  <div class="container">
+    <p class="section-label">Faça Parte</p>
+    <h1 class="section-title">Inscreva-se na AAAUPA</h1>
+    <p class="section-subtitle">
+      Escolha sua modalidade, preencha o formulário e venha jogar com a gente. O tucano te espera.
+    </p>
+  </div>
+</header>
+
+<section class="inscricao-wrapper">
+  <div class="container">
+    <div class="insc-layout">
+
+      <!-- Benefícios -->
+      <div>
+        <p class="section-label fade-in">Por que se inscrever?</p>
+        <h2 class="section-title fade-in delay-1" style="font-size:2rem;margin-bottom:2rem;">
+          O que você<br>ganha sendo<br>um Tucano
+        </h2>
+
+        <div class="insc-benefits">
+          <div class="insc-benefit fade-in delay-1">
+            <span class="icon">🏆</span>
+            <div><strong>Competições</strong><p>Participe dos campeonatos internos e externos representando a UNIFEI.</p></div>
+          </div>
+          <div class="insc-benefit fade-in delay-2">
+            <span class="icon">🤝</span>
+            <div><strong>Pertencimento</strong><p>Entre para uma comunidade que vai além da sala de aula.</p></div>
+          </div>
+          <div class="insc-benefit fade-in delay-3">
+            <span class="icon">📅</span>
+            <div><strong>Eventos</strong><p>Acesso prioritário aos eventos e campeonatos da AAAUPA.</p></div>
+          </div>
+          <div class="insc-benefit fade-in delay-4">
+            <span class="icon">🌱</span>
+            <div><strong>Crescimento</strong><p>Desenvolva habilidades, liderança e espírito de equipe.</p></div>
+          </div>
+        </div>
+
+        <div style="background:rgba(232,93,4,0.08);border:1px solid rgba(232,93,4,0.2);border-radius:12px;padding:1.5rem;" class="fade-in delay-3">
+          <p style="font-family:var(--font-heading);font-size:0.78rem;font-weight:800;text-transform:uppercase;letter-spacing:0.12em;color:var(--orange-primary);margin-bottom:0.5rem;">⚡ Dúvidas?</p>
+          <p style="font-size:0.88rem;color:var(--text-muted);line-height:1.7;">
+            Entre em contato pelo WhatsApp
+            <a href="tel:+5511981008656" style="color:var(--orange-secondary);"> (11) 98100-8656</a>
+            ou acesse a página de
+            <a href="contato.html" style="color:var(--orange-secondary);">Contato</a>.
+          </p>
+        </div>
+      </div>
+
+      <!-- Formulário -->
+      <div class="inscricao-card fade-in delay-2">
+        <h3>Formulário de Inscrição</h3>
+        <p>Preencha todos os campos abaixo. Entraremos em contato via WhatsApp para confirmar sua inscrição.</p>
+
+        <form id="form-inscricao" aria-label="Formulário de inscrição em modalidade">
+          <div class="form-grid">
+
+            <div class="form-group full">
+              <label for="insc-nome">Nome completo *</label>
+              <input type="text" id="insc-nome" name="nome" placeholder="Seu nome completo" required autocomplete="name" />
+            </div>
+            <div class="form-group">
+              <label for="insc-whatsapp">Telefone/WhatsApp *</label>
+              <input type="tel" id="insc-whatsapp" name="whatsapp" placeholder="(XX) XXXXX-XXXX" required autocomplete="tel" />
+            </div>
+
+            <div class="form-group">
+              <label for="insc-curso">Curso *</label>
+              <input type="text" id="insc-curso" name="curso" placeholder="Ex: Engenharia Civil" required />
+            </div>
+
+            <div class="form-group">
+              <label for="insc-periodo">Período *</label>
+              <select id="insc-periodo" name="periodo" required>
+                <option value="" disabled selected>Selecione</option>
+                <option value="1">1º Período</option>
+                <option value="2">2º Período</option>
+                <option value="3">3º Período</option>
+                <option value="4">4º Período</option>
+                <option value="5">5º Período</option>
+                <option value="6">6º Período</option>
+                <option value="7">7º Período</option>
+                <option value="8">8º Período</option>
+                <option value="9">9º Período ou acima</option>
+              </select>
+            </div>
+
+            <div class="form-group full">
+              <label for="insc-modalidade">Modalidade desejada *</label>
+              <select id="insc-modalidade" name="modalidade" required>
+                <option value="" disabled selected>Selecione uma modalidade</option>
+                <option value="futsal">⚽ Futsal</option>
+                <option value="futebol">🏈 Futebol</option>
+                <option value="volei">🏐 Vôlei</option>
+                <option value="basquete">🏀 Basquete</option>
+                <option value="xadrez">♟️ Xadrez</option>
+                <option value="truco">🃏 Truco</option>
+                <option value="jogos-online">🎮 Jogos Online (E-Sports)</option>
+              </select>
+            </div>
+
+          </div>
+
+          <p style="font-size:0.8rem;color:var(--text-muted);margin-bottom:1.25rem;line-height:1.65;">
+            Ao enviar este formulário, você concorda em ser contatado pela AAAUPA via WhatsApp ou e-mail
+            para confirmação da inscrição e informações sobre a modalidade escolhida.
+          </p>
+
+          <button type="submit" class="btn btn-primary btn-full">
+            🦜 Enviar Inscrição
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">
+          <img src="img/logo.png" alt="Logo AAAUPA" class="logo-icon" style="width:42px;height:42px;object-fit:contain;" />
+          <span class="brand-name">AAA<span class="brand-accent">UPA</span></span>
+        </a>
+        <p>Associação Atlética Acadêmica UNIFEI Pouso Alegre.<br>Bico afiado. Garra invicta.</p>
+        <div class="footer-social">
+          <a href="#" class="social-btn" aria-label="Instagram">📷</a>
+          <a href="#" class="social-btn" aria-label="WhatsApp">💬</a>
+          <a href="#" class="social-btn" aria-label="YouTube">▶️</a>
+        </div>
+      </div>
+      <nav><h4>Site</h4><ul>
+        <li><a href="modalidades.html">Modalidades</a></li>
+        <li><a href="campeonatos.html">Campeonatos</a></li>
+        <li><a href="eventos.html">Eventos</a></li>
+        <li><a href="quem-somos.html">Quem Somos</a></li>
+      </ul></nav>
+      <nav><h4>Participe</h4><ul>
+        <li><a href="inscricao.html">Inscreva-se</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="login.html">Área da Gestão</a></li>
+      </ul></nav>
+      <div><h4>Endereço</h4>
+        <address>
+          Praça Alcides Mosconi, nº 55<br>Nova Pouso Alegre — MG<br><br>
+          <a href="tel:+5511981008656">(11) 98100-8656</a><br>
+          <a href="mailto:">contato@aaaupa.com.br</a>
+        </address>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 AAAUPA — Associação Atlética Acadêmica UNIFEI Pouso Alegre</span>
+      <span>Feito com 🧡 por estudantes, para estudantes</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+<script src="js/firebase-config.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

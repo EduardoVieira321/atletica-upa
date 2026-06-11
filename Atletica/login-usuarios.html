@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Acesse sua conta — AAAUPA." />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Acesse sua Conta — AAAUPA</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦜</text></svg>" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<main class="login-wrapper">
+  <div class="login-card">
+
+    <div class="login-logo">
+      <div class="logo-icon">🦜</div>
+      <h2>AAAUPA</h2>
+      <p id="login-subtitulo">Identifique-se para Continuar</p>
+    </div>
+
+    <form id="form-login-usuarios" novalidate aria-label="Formulário de acesso">
+      <div class="form-group">
+        <label for="login-email">E-mail</label>
+        <input type="email" id="login-email" name="email" placeholder="seu-email@exemplo.com" required autocomplete="email" />
+      </div>
+      
+      <div class="form-group">
+        <label for="login-senha">Senha</label>
+        <input type="password" id="login-senha" name="senha" placeholder="••••••••" required autocomplete="current-password" />
+      </div>
+
+      <div class="form-group" id="group-confirmar-senha" style="display: none;">
+        <label for="login-confirmar-senha">Confirmar Senha</label>
+        <input type="password" id="login-confirmar-senha" name="confirmar-senha" placeholder="••••••••" autocomplete="new-password" />
+      </div>
+
+      <button type="submit" id="btn-submit" class="btn btn-primary btn-full" style="margin-top:0.5rem;">
+        Entrar
+      </button>
+      
+      <div style="text-align: center; margin-top: 1.5rem; font-size: 0.9rem; color: #475569; display: flex; flex-direction: column; gap: 0.75rem;">
+        <p style="margin: 0;">
+          <span id="texto-alternar">Não tem uma conta?</span> 
+          <a href="#" id="link-alternar" style="color: #005088; font-weight: bold; text-decoration: none;">Cadastre-se</a>
+        </p>
+        
+        <hr style="border: 0; border-top: 1px solid #e2e8f0; margin: 0.25rem 0;" />
+        
+        <p style="margin: 0;">
+          <a href="index.html" style="color: #64748b; text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; gap: 0.25rem;">
+            ← Voltar ao site
+          </a>
+        </p>
+      </div>
+
+    </form>
+  </div>
+</main>
+
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+<script src="js/firebase-config.js"></script>
+<script src="js/login-usuarios.js"></script>
+
+</body>
+</html>

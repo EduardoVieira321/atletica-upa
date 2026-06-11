@@ -1,0 +1,17 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Regra para Mensagens de Contato
+    match /contatos/{document} {
+      allow create: if true; 
+      allow read, update, delete: if false;
+    }
+    
+    // Regra para Inscrições
+    match /inscricoes/{document} {
+      allow create: if true; 
+      allow read, update, delete: if false;
+    }
+  }
+}

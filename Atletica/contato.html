@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Entre em contato com a AAAUPA — Associação Atlética Acadêmica UNIFEI Pouso Alegre." />
+  <title>Contato — AAAUPA</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦜</text></svg>" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="container">
+    <a href="index.html" class="nav-logo">
+      <img src="img/logo.png" alt="Logo AAAUPA" class="logo-icon" style="width:42px;height:42px;object-fit:contain;" />
+      <span class="brand-name">AAA<span class="brand-accent">UPA</span></span>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="modalidades.html">Modalidades</a></li>
+      <li><a href="campeonatos.html">Campeonatos</a></li>
+      <li><a href="eventos.html">Nossos Eventos</a></li>
+      <li><a href="quem-somos.html">Quem Somos</a></li>
+      <li><a href="contato.html" class="active">Contato</a></li>
+      <li><a href="inscricao.html" class="btn-nav-cta">Inscreva-se</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<header class="page-header">
+  <div class="container">
+    <p class="section-label">Fale Conosco</p>
+    <h1 class="section-title">Contato</h1>
+    <p class="section-subtitle">
+      Tem alguma dúvida, sugestão ou quer fazer parte da AAAUPA? A gente está aqui para você.
+    </p>
+  </div>
+</header>
+
+<section style="padding: 4rem 0 6rem;">
+  <div class="container">
+    <div class="contato-grid">
+
+      <!-- Info -->
+      <div>
+        <p class="section-label fade-in">Onde estamos</p>
+        <h2 class="section-title fade-in delay-1" style="font-size:2.2rem;margin-bottom:2.5rem;">
+          Vem nos<br>Encontrar!
+        </h2>
+
+        <div class="contato-info-item fade-in delay-2">
+          <div class="contato-icon" aria-hidden="true">📍</div>
+          <div>
+            <h4>Endereço</h4>
+            <p>Praça Alcides Mosconi, nº 55<br>Nova Pouso Alegre — Minas Gerais</p>
+          </div>
+        </div>
+
+        <div class="contato-info-item fade-in delay-3">
+          <div class="contato-icon" aria-hidden="true">📞</div>
+          <div>
+            <h4>Telefone / WhatsApp</h4>
+            <a href="tel:+5511981008656" style="color:var(--orange-secondary);">(11) 98100-8656</a>
+          </div>
+        </div>
+
+        <div class="contato-info-item fade-in delay-4">
+          <div class="contato-icon" aria-hidden="true">✉️</div>
+          <div>
+            <h4>E-mail</h4>
+            <p>Em breve</p>
+          </div>
+        </div>
+
+        <div class="contato-info-item fade-in delay-5">
+          <div class="contato-icon" aria-hidden="true">📱</div>
+          <div>
+            <h4>Redes Sociais</h4>
+            <p>Em breve — acompanhe nosso Instagram!</p>
+          </div>
+        </div>
+
+        <div style="margin-top:2.5rem;" class="fade-in">
+          <p class="section-label" style="margin-bottom:0.8rem;">Horário de atendimento</p>
+          <p style="color:var(--text-muted);font-size:0.92rem;line-height:1.8;">
+            Segunda a Sexta: 8h às 18h<br>
+            Sábados: mediante eventos<br>
+            Atendimento prioritário via WhatsApp
+          </p>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div class="fade-in delay-2">
+        <div class="contato-form-card">
+          <h3 style="font-family:var(--font-display);font-size:1.8rem;margin-bottom:0.4rem;color:var(--off-white);">
+            Envie uma Mensagem
+          </h3>
+          <p style="font-size:0.88rem;color:var(--text-muted);margin-bottom:2rem;">
+            Respondemos em até 24 horas nos dias úteis.
+          </p>
+
+          <form id="form-contato"aria-label="Formulário de contato">
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="nome">Nome completo *</label>
+                <input type="text" id="nome" name="nome" placeholder="Seu nome" required autocomplete="name" />
+              </div>
+              <div class="form-group">
+                <div class="form-group">
+               <label for="telefone">Telefone / WhatsApp</label>
+               <input type="text" id="contato-telefone" placeholder="(00) 00000-0000" required>
+              </div>
+              </div>
+              <div class="form-group full">
+                <label for="assunto">Assunto *</label>
+                <select id="assunto" name="assunto" required>
+                  <option value="" disabled selected>Selecione um assunto</option>
+                  <option value="modalidade">Informações sobre modalidades</option>
+                  <option value="evento">Informações sobre eventos</option>
+                  <option value="parceria">Parceria ou patrocínio</option>
+                  <option value="imprensa">Imprensa</option>
+                  <option value="outro">Outro assunto</option>
+                </select>
+              </div>
+              <div class="form-group full">
+                <label for="mensagem">Mensagem *</label>
+                <textarea id="mensagem" name="mensagem" placeholder="Escreva sua mensagem aqui..." required rows="5"></textarea>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full" style="margin-top:0.5rem;">
+              Enviar Mensagem
+            </button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">
+          <img src="img/logo.png" alt="Logo AAAUPA" class="logo-icon" style="width:42px;height:42px;object-fit:contain;" />
+          <span class="brand-name">AAA<span class="brand-accent">UPA</span></span>
+        </a>
+        <p>Associação Atlética Acadêmica UNIFEI Pouso Alegre.<br>Bico afiado. Garra invicta.</p>
+        <div class="footer-social">
+          <a href="#" class="social-btn" aria-label="Instagram">📷</a>
+          <a href="#" class="social-btn" aria-label="WhatsApp">💬</a>
+          <a href="#" class="social-btn" aria-label="YouTube">▶️</a>
+        </div>
+      </div>
+      <nav><h4>Site</h4><ul>
+        <li><a href="modalidades.html">Modalidades</a></li>
+        <li><a href="campeonatos.html">Campeonatos</a></li>
+        <li><a href="eventos.html">Eventos</a></li>
+        <li><a href="quem-somos.html">Quem Somos</a></li>
+      </ul></nav>
+      <nav><h4>Participe</h4><ul>
+        <li><a href="inscricao.html">Inscreva-se</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="login.html">Área da Gestão</a></li>
+      </ul></nav>
+      <div><h4>Endereço</h4>
+        <address>
+          Praça Alcides Mosconi, nº 55<br>Nova Pouso Alegre — MG<br><br>
+          <a href="tel:+5511981008656">(11) 98100-8656</a><br>
+          <a href="mailto:">contato@aaaupa.com.br</a>
+        </address>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 AAAUPA — Associação Atlética Acadêmica UNIFEI Pouso Alegre</span>
+      <span>Feito com 🧡 por estudantes, para estudantes</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+<script src="js/firebase-config.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

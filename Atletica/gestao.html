@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Painel de Gestão — AAAUPA</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦜</text></svg>" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<!-- Loading / auth check -->
+<div class="auth-loading">
+  <div style="font-size:3rem;">🦜</div>
+  <p>Verificando acesso...</p>
+</div>
+
+<!-- Main layout (hidden until auth) -->
+<div class="gestao-layout auth-guard">
+
+  <!-- Sidebar -->
+  <aside class="gestao-sidebar" aria-label="Menu de gestão">
+    <div class="sidebar-logo">
+      <div class="logo-icon">🦜</div>
+      <span>AAA<span class="brand-accent">UPA</span></span>
+    </div>
+
+    <div class="sidebar-section">
+      <p class="sidebar-section-label">Painel</p>
+      <button class="sidebar-link active" data-panel="dashboard" onclick="switchPanel('dashboard', this)">
+        <span class="icon">📊</span> Dashboard
+      </button>
+      <button class="sidebar-link" data-panel="inscricoes" onclick="switchPanel('inscricoes', this)">
+        <span class="icon">📝</span> Inscrições
+      </button>
+      <button class="sidebar-link" data-panel="contatos" onclick="switchPanel('contatos', this)">
+        <span class="icon">✉️</span> Mensagens
+      </button>
+    </div>
+
+    <div class="sidebar-section">
+      <p class="sidebar-section-label">Site</p>
+      <a href="index.html" class="sidebar-link" target="_blank">
+        <span class="icon">🌐</span> Ver site
+      </a>
+    </div>
+
+    <div class="sidebar-logout">
+      <button class="sidebar-link" onclick="doLogout()" style="color:#ef4444;">
+        <span class="icon">🚪</span> Sair
+      </button>
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <main class="gestao-main" aria-label="Painel principal">
+
+    <!-- Dashboard -->
+    <div class="gestao-panel active" id="panel-dashboard">
+      <div class="gestao-header">
+        <h1>Dashboard</h1>
+        <p>Bem-vindo ao painel de gestão da AAAUPA.</p>
+      </div>
+
+      <div class="gestao-stats">
+        <div class="gestao-stat-card">
+          <p class="stat-label">Inscrições totais</p>
+          <p class="stat-value" id="stat-inscricoes">—</p>
+          <p class="stat-sub">Todas as modalidades</p>
+        </div>
+        <div class="gestao-stat-card">
+          <p class="stat-label">Mensagens recebidas</p>
+          <p class="stat-value" id="stat-mensagens">—</p>
+          <p class="stat-sub">Via formulário de contato</p>
+        </div>
+        <div class="gestao-stat-card">
+          <p class="stat-label">Modalidades ativas</p>
+          <p class="stat-value">7</p>
+          <p class="stat-sub">Futsal, Futebol, Vôlei…</p>
+        </div>
+      </div>
+
+      <div class="gestao-card">
+        <div class="gestao-card-header">
+          <h3>Últimas Inscrições</h3>
+          <span id="last-insc-count">—</span>
+        </div>
+        <div id="table-inscricoes-preview" style="padding:2rem;text-align:center;color:var(--text-muted);">
+          Carregando dados...
+        </div>
+      </div>
+    </div>
+
+    <!-- Inscrições -->
+    <div class="gestao-panel" id="panel-inscricoes">
+      <div class="gestao-header">
+        <h1>Inscrições</h1>
+        <p>Todas as inscrições recebidas via formulário do site.</p>
+      </div>
+      <div class="gestao-card">
+        <div class="gestao-card-header">
+          <h3>Lista de Inscrições</h3>
+        </div>
+        <div id="table-inscricoes-full" style="padding:2rem;text-align:center;color:var(--text-muted);">
+          Carregando dados...
+        </div>
+      </div>
+    </div>
+
+    <!-- Contatos -->
+    <div class="gestao-panel" id="panel-contatos">
+      <div class="gestao-header">
+        <h1>Mensagens</h1>
+        <p>Mensagens recebidas pelo formulário de contato do site.</p>
+      </div>
+      <div class="gestao-card">
+        <div class="gestao-card-header">
+          <h3>Lista de Mensagens</h3>
+        </div>
+        <div id="table-contatos-full" style="padding:2rem;text-align:center;color:var(--text-muted);">
+          Carregando dados...
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+
+<script src="js/firebase-config.js"></script>
+
+<script src="js/gestao.js"></script>
+</body>
+</html>
