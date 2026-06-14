@@ -1,17 +1,41 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
-    
-    // Regra para Mensagens de Contato
-    match /contatos/{document} {
-      allow create: if true; 
-      allow read, update, delete: if false;
+
+    function isGestor() {
+      return request.auth != null &&
+        exists(
+          /databases/$(database)/documents/usuarios/$(request.auth.uid)
+        ) &&
+        get(
+          /databases/$(database)/documents/usuarios/$(request.auth.uid)
+        ).data.autorizado == true;
     }
-    
-    // Regra para Inscrições
+
+    match /contatos/{document} {
+      allow create: if request.auth != null;
+      allow read: if isGestor();
+      allow update, delete: if false;
+    }
+
     match /inscricoes/{document} {
-      allow create: if true; 
-      allow read, update, delete: if false;
+      allow create: if request.auth != null;
+      allow read: if isGestor();
+      allow update, delete: if false;
+    }
+    match /usuarios/{userId} {
+
+      allow create: if request.auth != null &&
+                    request.auth.uid == userId;
+
+      allow get: if request.auth != null &&
+                 request.auth.uid == userId;
+
+      allow list: if isGestor();
+
+      allow update: if isGestor();
+
+      allow delete: if false;
     }
   }
 }
