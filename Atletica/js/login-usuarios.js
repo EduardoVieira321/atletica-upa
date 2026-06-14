@@ -69,9 +69,19 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       try {
-        const userCredential = await firebaseAuth.createUserWithEmailAndPassword(email, senha);
-        await userCredential.user.sendEmailVerification();
-        
+       const userCredential = await firebaseAuth.createUserWithEmailAndPassword(email, senha);
+
+      const db = firebase.firestore();
+
+      await db.collection('usuarios')
+      .doc(userCredential.user.uid)
+      .set({
+      email: email,
+      autorizado: false,
+     criadoEm: firebase.firestore.FieldValue.serverTimestamp()
+  });
+
+await userCredential.user.sendEmailVerification();
         alert('Cadastro realizado! Enviamos um link de ativação para o seu e-mail.');
         if (linkAlternar) linkAlternar.click();
         loginForm.reset();
