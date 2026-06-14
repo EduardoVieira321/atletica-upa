@@ -116,6 +116,12 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => window.location.href = 'login-usuarios.html', 2000);
         return;
       }
+      await usuarioConectado.reload();
+
+      if (!usuarioConectado.emailVerified) {
+      showToast('E-mail não verificado', 'Verifique seu e-mail antes de utilizar esta funcionalidade.', 'error');
+      return;
+      }
 
       const telefone = contatoForm.querySelector('#contato-telefone').value;
       if (!validarTelefone(telefone)) {
@@ -166,6 +172,18 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => window.location.href = 'login-usuarios.html', 2000);
         return;
       }
+      // Atualiza os dados do usuário no Firebase
+      await usuarioConectado.reload();
+
+      // Verifica se o e-mail foi confirmado
+      if (!usuarioConectado.emailVerified) {
+      showToast(
+      'E-mail não verificado',
+      'Verifique seu e-mail antes de realizar inscrições.',
+      'error'
+      );
+    return;
+    }
 
       const whatsapp = inscricaoForm.querySelector('#insc-whatsapp').value;
 

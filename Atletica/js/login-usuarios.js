@@ -82,6 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 await userCredential.user.sendEmailVerification();
+await firebaseAuth.signOut();
         alert('Cadastro realizado! Enviamos um link de ativação para o seu e-mail.');
         if (linkAlternar) linkAlternar.click();
         loginForm.reset();
