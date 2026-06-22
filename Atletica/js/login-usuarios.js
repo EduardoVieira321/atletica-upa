@@ -12,6 +12,36 @@ document.addEventListener('DOMContentLoaded', () => {
   let modoAtual = 'login';
   const validarEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
+  const linkEsqueciSenha = document.getElementById('esqueci-senha');
+
+if (linkEsqueciSenha) {
+  linkEsqueciSenha.addEventListener('click', async (e) => {
+    e.preventDefault();
+
+    const email = document.getElementById('login-email').value.trim();
+
+    if (!email) {
+      alert('Digite seu e-mail primeiro.');
+      return;
+    }
+
+    if (!validarEmail(email)) {
+      alert('Digite um e-mail válido.');
+      return;
+    }
+
+    try {
+      await firebase.auth().sendPasswordResetEmail(email);
+    } catch (err) {
+      console.error(err);
+    }
+
+    alert(
+      'Se existir uma conta associada a este e-mail, você receberá instruções para redefinir sua senha.'
+    );
+  });
+}
+
   // Alternador visual (Login <-> Cadastro) sem falar em Gestão
   if (linkAlternar && groupConfirmarSenha) {
     linkAlternar.addEventListener('click', (e) => {

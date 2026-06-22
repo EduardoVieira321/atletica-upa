@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+
 <main class="login-wrapper">
   <div class="login-card">
 
@@ -20,47 +21,112 @@
     </div>
 
     <form id="form-login-usuarios" novalidate aria-label="Formulário de acesso">
+
       <div class="form-group">
         <label for="login-email">E-mail</label>
-        <input type="email" id="login-email" name="email" placeholder="seu-email@exemplo.com" required autocomplete="email" />
+        <input
+          type="email"
+          id="login-email"
+          name="email"
+          placeholder="seu-email@exemplo.com"
+          required
+          autocomplete="email"
+        />
       </div>
-      
+
       <div class="form-group">
         <label for="login-senha">Senha</label>
-        <input type="password" id="login-senha" name="senha" placeholder="••••••••" required autocomplete="current-password" />
+        <input
+          type="password"
+          id="login-senha"
+          name="senha"
+          placeholder="••••••••"
+          required
+          autocomplete="current-password"
+        />
       </div>
+
+      <!-- Link de recuperação de senha -->
+      <p style="text-align: right; margin-top: -0.5rem; margin-bottom: 1rem;">
+        <a
+          href="#"
+          id="esqueci-senha"
+          style="color: #005088; text-decoration: none; font-size: 0.9rem;"
+        >
+          Esqueci minha senha?
+        </a>
+      </p>
 
       <div class="form-group" id="group-confirmar-senha" style="display: none;">
         <label for="login-confirmar-senha">Confirmar Senha</label>
-        <input type="password" id="login-confirmar-senha" name="confirmar-senha" placeholder="••••••••" autocomplete="new-password" />
+        <input
+          type="password"
+          id="login-confirmar-senha"
+          name="confirmar-senha"
+          placeholder="••••••••"
+          autocomplete="new-password"
+        />
       </div>
 
-      <button type="submit" id="btn-submit" class="btn btn-primary btn-full" style="margin-top:0.5rem;">
+      <button
+        type="submit"
+        id="btn-submit"
+        class="btn btn-primary btn-full"
+        style="margin-top:0.5rem;"
+      >
         Entrar
       </button>
-      
-      <div style="text-align: center; margin-top: 1.5rem; font-size: 0.9rem; color: #475569; display: flex; flex-direction: column; gap: 0.75rem;">
+
+      <div
+        style="
+          text-align: center;
+          margin-top: 1.5rem;
+          font-size: 0.9rem;
+          color: #475569;
+          display: flex;
+          flex-direction: column;
+          gap: 0.75rem;
+        "
+      >
         <p style="margin: 0;">
-          <span id="texto-alternar">Não tem uma conta?</span> 
-          <a href="#" id="link-alternar" style="color: #005088; font-weight: bold; text-decoration: none;">Cadastre-se</a>
+          <span id="texto-alternar">Não tem uma conta?</span>
+          <a
+            href="#"
+            id="link-alternar"
+            style="color: #005088; font-weight: bold; text-decoration: none;"
+          >
+            Cadastre-se
+          </a>
         </p>
-        
+
         <hr style="border: 0; border-top: 1px solid #e2e8f0; margin: 0.25rem 0;" />
-        
+
         <p style="margin: 0;">
-          <a href="index.html" style="color: #64748b; text-decoration: none; font-weight: 500; display: inline-flex; align-items: center; gap: 0.25rem;">
+          <a
+            href="index.html"
+            style="
+              color: #64748b;
+              text-decoration: none;
+              font-weight: 500;
+              display: inline-flex;
+              align-items: center;
+              gap: 0.25rem;
+            "
+          >
             ← Voltar ao site
           </a>
         </p>
       </div>
 
     </form>
+
   </div>
 </main>
 
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+
 <script src="js/firebase-config.js"></script>
 <script src="js/login-usuarios.js"></script>
 
